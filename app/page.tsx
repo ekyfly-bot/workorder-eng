@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import { Button } from '@/components/common/Button';
 import { useAuth } from '@/lib/hooks/useCustomHooks';
 import { useRouter } from 'next/navigation';

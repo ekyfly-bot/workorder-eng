@@ -2,10 +2,9 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/common/Card';
 import { Button } from '@/components/common/Button';
-import { Select } from '@/components/common/FormElements';
 import Link from 'next/link';
-import { ChevronLeft, Clock, MapPin, AlertCircle, User, Calendar } from 'lucide-react';
-import { WORK_ORDER_STATUS_LABEL, WORK_ORDER_PRIORITY_LABEL, WORK_ORDER_STATUS_COLOR, WORK_ORDER_PRIORITY_COLOR } from '@/lib/constants';
+import { ChevronLeft, Clock, MapPin, User, Calendar } from 'lucide-react';
+import { WORK_ORDER_PRIORITY_LABEL, WORK_ORDER_STATUS_COLOR, WORK_ORDER_PRIORITY_COLOR } from '@/lib/constants';
 
 // Mock data
 const mockWorkOrder = {
@@ -24,7 +23,7 @@ const mockWorkOrder = {
   department: 'Engineering',
 };
 
-export default function WorkOrderDetailPage({ params }: { params: { id: string } }) {
+export default function WorkOrderDetailPage() {
   return (
     <div className="space-y-6">
       {/* Header */}

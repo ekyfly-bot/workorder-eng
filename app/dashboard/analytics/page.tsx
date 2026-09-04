@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/common/Card';
 import { Button } from '@/components/common/Button';
-import { BarChart3, Download, TrendingUp } from 'lucide-react';
+import { Download, TrendingUp } from 'lucide-react';
 
 export default function AnalyticsPage() {
   return (

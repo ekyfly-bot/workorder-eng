@@ -3,7 +3,7 @@ import axios, {
   AxiosError,
   InternalAxiosRequestConfig,
 } from 'axios';
-import { STORAGE_KEYS, REQUEST_TIMEOUT, RETRY_CONFIG } from './constants';
+import { STORAGE_KEYS, REQUEST_TIMEOUT } from './constants';
 import { ApiError } from './types';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api';
@@ -78,12 +78,6 @@ class ApiClient {
       return localStorage.getItem(STORAGE_KEYS.REFRESH_TOKEN);
     }
     return null;
-  }
-
-  private setRefreshToken(token: string): void {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem(STORAGE_KEYS.REFRESH_TOKEN, token);
-    }
   }
 
   private async refreshToken(): Promise<string | null> {

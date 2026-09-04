@@ -1,6 +1,6 @@
 'use client';
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/common/Card';
+import { Card, CardContent } from '@/components/common/Card';
 import { Button } from '@/components/common/Button';
 import { Plus, Edit, Trash2, Shield } from 'lucide-react';
 import { Input } from '@/components/common/FormElements';

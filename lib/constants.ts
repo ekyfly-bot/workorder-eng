@@ -23,6 +23,7 @@ export const API_ENDPOINTS = {
     CREATE: '/assignments',
     GET: (id: string) => `/assignments/${id}`,
     UPDATE: (id: string) => `/assignments/${id}`,
+    DELETE: (id: string) => `/assignments/${id}`,
     APPROVE: (id: string) => `/assignments/${id}/approve`,
     REJECT: (id: string) => `/assignments/${id}/reject`,
   },

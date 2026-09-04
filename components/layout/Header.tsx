@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Bell, LogOut, Settings, User } from 'lucide-react';
 import { User as UserType } from '@/lib/types';
-import { Button } from '@/components/common/Button';
 import authStore from '@/lib/auth';
 
 interface HeaderProps {

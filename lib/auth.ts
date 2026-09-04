@@ -6,14 +6,12 @@ import { getFromLocalStorage, setToLocalStorage, removeFromLocalStorage } from '
 
 class AuthStore {
   private token: string | null = null;
-  private refreshToken: string | null = null;
   private user: User | null = null;
   private listeners: Set<() => void> = new Set();
 
   constructor() {
     if (typeof window !== 'undefined') {
       this.token = getFromLocalStorage<string>(STORAGE_KEYS.AUTH_TOKEN);
-      this.refreshToken = getFromLocalStorage<string>(STORAGE_KEYS.REFRESH_TOKEN);
       this.user = getFromLocalStorage<User>(STORAGE_KEYS.USER);
     }
   }
@@ -56,7 +54,6 @@ class AuthStore {
 
   private setAuth(token: string, refreshToken: string, user: User) {
     this.token = token;
-    this.refreshToken = refreshToken;
     this.user = user;
 
     setToLocalStorage(STORAGE_KEYS.AUTH_TOKEN, token);
@@ -68,7 +65,6 @@ class AuthStore {
 
   private clearAuth() {
     this.token = null;
-    this.refreshToken = null;
     this.user = null;
 
     removeFromLocalStorage(STORAGE_KEYS.AUTH_TOKEN);
@@ -92,7 +88,9 @@ class AuthStore {
 
   subscribe(listener: () => void) {
     this.listeners.add(listener);
-    return () => this.listeners.delete(listener);
+    return () => {
+      this.listeners.delete(listener);
+    };
   }
 
   private notifyListeners() {

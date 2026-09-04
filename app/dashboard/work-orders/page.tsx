@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Plus, Search, Filter, ChevronRight } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/common/Card';
+import { Card, CardContent } from '@/components/common/Card';
 import { Button } from '@/components/common/Button';
 import { Input, Select } from '@/components/common/FormElements';
 import { WORK_ORDER_STATUS_LABEL, WORK_ORDER_PRIORITY_LABEL, WORK_ORDER_STATUS_COLOR, WORK_ORDER_PRIORITY_COLOR } from '@/lib/constants';
@@ -141,11 +141,11 @@ export default function WorkOrdersPage() {
                     <div className="flex-1">
                       <div className="flex items-center gap-4 mb-3">
                         <h3 className="font-semibold text-gray-900">{order.title}</h3>
-                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${WORK_ORDER_STATUS_COLOR[order.status]}`}>
-                          {WORK_ORDER_STATUS_LABEL[order.status]}
+                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${WORK_ORDER_STATUS_COLOR[order.status as keyof typeof WORK_ORDER_STATUS_COLOR]}`}>
+                          {WORK_ORDER_STATUS_LABEL[order.status as keyof typeof WORK_ORDER_STATUS_LABEL]}
                         </span>
-                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${WORK_ORDER_PRIORITY_COLOR[order.priority]}`}>
-                          {WORK_ORDER_PRIORITY_LABEL[order.priority]}
+                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${WORK_ORDER_PRIORITY_COLOR[order.priority as keyof typeof WORK_ORDER_PRIORITY_COLOR]}`}>
+                          {WORK_ORDER_PRIORITY_LABEL[order.priority as keyof typeof WORK_ORDER_PRIORITY_LABEL]}
                         </span>
                       </div>
                       <div className="grid grid-cols-4 gap-4 text-sm text-gray-600">

@@ -3,8 +3,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/common/Card';
 import { Button } from '@/components/common/Button';
 import { Input } from '@/components/common/FormElements';
-import { Search, Calendar, Clock, CheckCircle } from 'lucide-react';
-import Link from 'next/link';
+import { Calendar, Clock, CheckCircle } from 'lucide-react';
 
 const mockAssignments = Array.from({ length: 8 }).map((_, i) => ({
   id: `ASN-${1000 + i}`,
